@@ -17,7 +17,13 @@ const ageGate = document.getElementById("ageGate");
 const btnMaior = document.getElementById("btnMaior");
 const btnMenor = document.getElementById("btnMenor");
 
+// Verifica se já confirmou antes
+if (localStorage.getItem("maior18") === "sim") {
+  ageGate.classList.add("hidden");
+}
+
 btnMaior.addEventListener("click", () => {
+  localStorage.setItem("maior18", "sim");
   ageGate.classList.add("hidden");
 });
 
