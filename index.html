@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/Siěmbolo fundo branco.png" type="image/x-icon">
   
 </head>
 <body>
@@ -393,42 +394,54 @@
     </section>
 
     <section id="contato" class="contact">
-      <div class="container">
-        <h2 class="section-title">Entre em contato</h2>
-        <p class="section-subtitle">
-          Fale com a representante ou envie seus dados para receber atendimento.
+  <div class="container">
+    <h2 class="section-title">Entre em contato</h2>
+    <p class="section-subtitle">
+      Fale com a representante ou envie seus dados para receber atendimento
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-box contact-info-box">
+        <p class="contact-message">
+          Para entrar em contato com a representante<br>
+          clique no botão do whatsapp abaixo
         </p>
 
-        <div class="contact-grid">
-          <div class="contact-info">
-            <div class="contact-box">
-              <p><strong>WhatsApp:</strong> (11) 99999-9999</p>
-              <p><strong>Instagram:</strong> @vinho24h</p>
-              <p><strong>Atendimento:</strong> São Caetano do Sul e região</p>
+        <a class="btn btn-primary contact-whatsapp-btn" href="https://wa.me/5511999999999" target="_blank">
+          Chamar no Whatsapp
+        </a>
 
-              <div class="buttons contact-buttons">
-                <a class="btn btn-primary" href="https://wa.me/5511999999999" target="_blank">Chamar no WhatsApp</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form-box">
-            <form class="contact-form">
-              <label for="nome">Nome</label>
-              <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
-
-              <label for="telefone">Telefone</label>
-              <input type="text" id="telefone" name="telefone" placeholder="Digite seu telefone">
-
-              <label for="email">E-mail</label>
-              <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
-
-              <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-          </div>
-        </div>
+        <p class="contact-email-text">Ou entre em contato pelo email:</p>
+        <a class="contact-email-link" href="mailto:saopaulosp.v24h@gmail.com">
+          saopaulosp.v24h@gmail.com
+        </a>
       </div>
-    </section>
+
+      <div class="contact-form-box">
+        <form id="contactForm" class="contact-form" action="https://formsubmit.co/SEUEMAIL@gmail.com" method="POST">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="box">
+
+  <label>Nome e Sobrenome</label>
+  <input type="text" name="nome" placeholder="Digite seu nome" required>
+
+  <label>Telefone para contato</label>
+  <input type="text" name="telefone" placeholder="Digite seu telefone DDD + Número" required>
+
+  <label>Email para contato</label>
+  <input type="email" name="email" placeholder="Digite seu email" required>
+
+  <button type="submit" class="btn btn-primary contact-submit-btn">Enviar</button>
+
+  <!-- MENSAGEM -->
+  <p id="formMessage" style="display:none; margin-top:15px; color:green; font-weight:600;">
+    Mensagem enviada com sucesso!
+  </p>
+</form>
+      </div>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer>

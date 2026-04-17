@@ -17,13 +17,12 @@ const ageGate = document.getElementById("ageGate");
 const btnMaior = document.getElementById("btnMaior");
 const btnMenor = document.getElementById("btnMenor");
 
-// Verifica se já confirmou antes
-if (localStorage.getItem("maior18") === "sim") {
+if (sessionStorage.getItem("maior18") === "sim") {
   ageGate.classList.add("hidden");
 }
 
 btnMaior.addEventListener("click", () => {
-  localStorage.setItem("maior18", "sim");
+  sessionStorage.setItem("maior18", "sim");
   ageGate.classList.add("hidden");
 });
 
@@ -42,5 +41,31 @@ perguntas.forEach((pergunta) => {
     } else {
       resposta.style.display = "block";
     }
+  });
+});
+
+const form = document.getElementById("contactForm");
+const message = document.getElementById("formMessage");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const data = new FormData(form);
+
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      message.style.display = "block";
+      form.reset();
+    } else {
+      alert("Erro ao enviar. Tente novamente.");
+    }
+  }).catch(() => {
+    alert("Erro ao enviar. Tente novamente.");
   });
 });
